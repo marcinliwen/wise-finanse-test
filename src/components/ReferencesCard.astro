@@ -1,0 +1,21 @@
+---
+const { reference } = Astro.props;
+---
+
+<article class="bg-white rounded-2xl p-12">
+  <div class="text-bordo-100 flex gap-5 mb-5">
+    <img
+      class="rounded self-center"
+      alt="Argument lorem ipsum"
+      src={reference.image}
+    />
+    <div>
+      <h3 class="lagusans text-[20px] leading-7">{reference.name}</h3>
+      <p class="text-bordo-300 text-[12px]">{reference.title}</p>
+    </div>
+  </div>
+
+  <p class="small text-bordo-200">
+    {reference.description}
+  </p>
+</article>

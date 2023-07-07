@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Input from "../components/Input.astro";
+import Select from "../components/Select.astro";
+import ContactForm from "../components/ContactForm.astro";
+import TextArea from "../components/TextArea.astro";
+import HeroHeader from "../components/HeroHeader.astro";
+import AppointmentForm from "../components/AppointmentForm.astro";
+import Offer from "../components/Offer.astro";
+import Instagram from "../components/Instagram.astro";
+import Film from "../components/Film.astro";
+import BlogRoll from "../components/BlogRoll.astro";
+import HomeHero from "../components/HomeHero.astro";
+import CaseRoll from "../components/CaseRoll.astro";
+import References from "../components/References.astro";
+import Newsletter from "../components/Newsletter.astro";
+import BlogRollCategory from "../components/BlogRollCategory.astro";
+
+const hero = {
+  bg: "#750843",
+  image: "/assets/images/hero-image.png",
+  title: "O firmie",
+  subtitle: "napisz od nas i zamów darmową konsulację",
+  text: "Torem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Class aptent taciti sociosqu ad litora torquent per conubia",
+  video: {
+    link: "https://c.stocksy.com/a/XhRK00/y0/4873047.mp4",
+  },
+};
+---
+
+<Layout title="Wise energy" isHome={true}>
+  <main>
+    <HomeHero bg={hero.bg} image={hero.image} />
+    <section class="py-20">
+      <div class="container wrapper">
+        <div class="lg:flex lg:gap-20 items-center">
+          <img
+            src="/assets/images/case-roll.png"
+            alt="Farma słoneczna"
+            width="478px"
+            class="mb-8 lg:mb-0 rounded-lg inView slideUp"
+          />
+          <div class="inView slideUp">
+            <h2 class="mb-8 lagusans text-bordo-100">
+              Wise <span class="victorserif">finance</span>. Mądry wybór <span
+                class="victorserif">i elastyczność</span
+              > dla Twojego biznesu
+            </h2>
+            <p class="text-grey-200 mb-8 leading-[250%]">
+              Działamy w niszy <img
+                class="inline"
+                width="72"
+                height="48"
+                src="/assets/images/inText-1.png"
+              /> najmu infrastruktury i sprzętu wraz z finansowaniem dla MŚP w Polsce.
+              Nasza oferta ma na celu szerokie wsparcie przedsiębiorstw <img
+                class="inline"
+                width="72"
+                height="48"
+                src="/assets/images/inText-2.png"
+              /> w zakresie dostarczenia wszelkich środków trwałych niezbędnych do
+              sprawnego, efektywnego a przede wszystkim elastycznego <img
+                class="inline"
+                width="72"
+                height="48"
+                src="/assets/images/inText-3.png"
+              /> działania przedsiębiorcy.
+            </p>
+            <a class="btn primary full">Zobacz więcej</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <Film />
+    <BlogRoll />
+    <References />
+    <CaseRoll />
+    <BlogRollCategory />
+    <Newsletter />
+  </main>
+</Layout>
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"
+/>
+
+<link rel="stylesheet" href="/assets/css/slider.css" />
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"
+></script>
+<script is:inline src="/assets/js/script.js"></script>

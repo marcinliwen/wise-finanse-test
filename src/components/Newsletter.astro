@@ -1,0 +1,36 @@
+---
+import Input from "../components/Input.astro";
+---
+
+<section class="pt-32 pb-40 bg-white">
+  <div class="container wrapper">
+    <div class="grid md:grid-cols-2 items-end justify-between">
+      <div class="mb-8 md:mb-0 text-bordo-200">
+        <h2 class="mb-4 victorserif">Newsletter</h2>
+        <p class="victorserif">
+          Jeśli chcesz wiedzieć <span class="lagusans font-medium">więcej</span>
+          o naszej usłudze, promocjach i wydarzeniach z nią związanych <span
+            class="lagusans font-medium">zostaw nam kontakt</span
+          >.
+        </p>
+      </div>
+      <div class="lg:pb-4">
+        <form>
+          <div class="flex w-full gap-4 items-center">
+            <Input
+              id="mail"
+              name="mail"
+              type="mail"
+              label="Podaj swój adres email"
+              placeholder="Podaj swój adres email"
+              className="flex-1"
+            />
+            <button class="btn-small primary full max-h-10" type="button"
+              >Zapisz się</button
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
