@@ -656,7 +656,7 @@ window.onload = () => {
   };
   let callback = (entries, observer) => {
     entries.forEach((entry) => {
-      if (entry.intersectionRatio >= 0.25) {
+      if (entry.intersectionRatio >= 0.1) {
         entry.target.classList.add("is_visible");
       } else {
         entry.target.classList.remove("is_visible");
