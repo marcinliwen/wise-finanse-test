@@ -72,7 +72,7 @@
   right: 0px;
   color: #fff;
   justify-content: center;
-  bottom: 64px;
+  bottom: 132px;
 }
 .home-swiper .counter {
   color: #f9f7f7;
@@ -155,6 +155,9 @@
   }
   .home-swiper .swiper-pagination-bullets {
     justify-content: flex-end;
+  }
+  .home-swiper .slider-navigation{
+    bottom:64px;
   }
   /* .home-swiper .slider-navigation {
     bottom: 0;
