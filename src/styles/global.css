@@ -33,7 +33,7 @@
   }
   h1 {
     font-weight: 400;
-    font-size: 32px;
+    font-size: 28px;
     line-height: 40px;
   }
   h2 {
@@ -110,6 +110,11 @@
   textarea:focus::placeholder {
     opacity: 0;
   }
+  @media (min-width: 768px) {
+    h1 {
+      font-size: 32px;
+    }
+  }
   @media (min-width: 1024px) {
     p {
       font-weight: 300;
@@ -141,7 +146,6 @@
   }
   .victorserif {
     font-family: "Victor Serif";
-    font-style: italic;
   }
   .wrapper {
     padding: 0 16px;
@@ -249,6 +253,10 @@
   .primary.outlined {
     background: #fff;
     color: #750843;
+  }
+  .primary.outlined.active {
+    background: #750843;
+    color: #fff;
   }
   .secondary {
     border-color: #f9f7f7;

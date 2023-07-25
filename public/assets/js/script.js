@@ -412,6 +412,7 @@ window.onload = () => {
         },
       },
     });
+    let $lgSwiper = document.getElementById("lg-swipper");
     const serviceImgSwiper = new Swiper(".service-img-swiper", {
       slidesPerView: 1,
       spaceBetween: 32,
@@ -427,6 +428,19 @@ window.onload = () => {
         },
         1024: {
           slidesPerView: 3,
+        },
+      },
+      on: {
+        init: function (swiper) {
+          const lg = lightGallery($lgSwiper, {
+            download: false,
+          });
+
+          // Before closing lightGallery, make sure swiper slide
+          // is aligned with the lightGallery active slide
+          $lgSwiper.addEventListener("lgBeforeClose", () => {
+            swiper.slideTo(lg.index, 0);
+          });
         },
       },
     });
@@ -820,7 +834,8 @@ function letCount() {
       const count = +counter.innerText;
 
       // Lower inc to slow and higher to slow
-      const inc = target / speed;
+
+      const inc = target > speed ? target / speed : 1;
 
       // Check if target is reached
       if (count < target) {
