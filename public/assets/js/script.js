@@ -141,6 +141,10 @@ window.onload = () => {
     const blogRollSwiper = new Swiper(".blog-roll-swiper", {
       slidesPerView: 1,
       spaceBetween: 16,
+      speed: 1000,
+      autoplay: {
+        delay: 3000,
+      },
       pagination: {
         enabled: true,
         el: ".swiper-pagination",
