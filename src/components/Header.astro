@@ -193,7 +193,7 @@ const mainMenu = [
         <nav
           class={`${textdark ? "text-white lg:text-bordo-300" : "text-white"}`}
         >
-          <ul class="lg:flex lg:gap-12 lg:items-center">
+          <ul class="lg:flex lg:gap-12 lg:items-center main-nav">
             <!-- {
               mainMenu.map((item) => (
                 <li>
@@ -210,25 +210,40 @@ const mainMenu = [
               mainMenu.map((item) => {
                 if (item.submenu) {
                   return (
-                    <li class="dropdown dropdown-hover leading-none group">
+                    <li class="dropdown dropdown-hover leading-none group has-sub-nav">
                       <label
                         tabindex="0"
-                        class={`p-3 lg:p-0 block !text-2xl lg:!text-sm lg:!leading-4 small-text cursor-pointer ${
+                        class={`p-3 lg:p-0 flex justify-between !text-2xl lg:!text-sm lg:!leading-4 small-text cursor-pointer  ${
                           textdark
                             ? "text-white lg:text-bordo-300"
                             : "text-white"
                         }`}
                       >
                         {item.title}
+                        <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class="lg:hidden">
+<g clip-path="url(#clip0_145_1762)">
+<path d="M7.46665 31.3333L24.2333 16.4987C24.3038 16.4361 24.3602 16.3593 24.3989 16.2734C24.4375 16.1874 24.4575 16.0942 24.4575 16C24.4575 15.9057 24.4375 15.8126 24.3989 15.7266C24.3602 15.6407 24.3038 15.5639 24.2333 15.5013L7.46665 0.666662" stroke="#fff" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<defs>
+<clipPath id="clip0_145_1762">
+<rect width="32" height="32" fill="white" transform="translate(32 32) rotate(180)"/>
+</clipPath>
+</defs>
+</svg>
+
                       </label>
-                      <div tabindex="0" class="dropdown-content md:pt-5">
-                        <ul class="list-none submenu  lg:py-4  rounded-lg bg-bordo-400 max-w-[229px]">
+                      <div tabindex="0" class="dropdown-content md:pt-5 sub-nav">
+                        <button class="sub-nav-back text-black absolute top-6 right-6"><svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24.5333 0.666672L7.76668 15.5013C7.69619 15.5639 7.63975 15.6407 7.60111 15.7266C7.56246 15.8126 7.54248 15.9058 7.54248 16C7.54248 16.0943 7.56246 16.1874 7.60111 16.2734C7.63975 16.3593 7.69619 16.4361 7.76668 16.4987L24.5333 31.3333" stroke="#60113D" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+</button>
+                        <ul class="list-none submenu  lg:py-4  rounded-lg bg-bordo-400 lg:max-w-[229px]">
                           {item.submenu.map((submenu) => {
                             return (
                               <li class="">
                                 <a
                                   href={submenu.link}
-                                  class=" text-bordo-100 text-left  group/subnav cursor-pointer transition py-[10px] px-6  block !text-2xl lg:!text-sm lg:!leading-4 small-text hover:bg-bordo-20  duration-300"
+                                  class=" text-bordo-100 text-left  group/subnav cursor-pointer transition py-[10px] px-7  block !text-2xl lg:!text-sm lg:!leading-4 small-text hover:bg-bordo-20  duration-300"
                                 >
                                   {submenu.title}
                                 </a>
@@ -243,7 +258,7 @@ const mainMenu = [
                   return (
                     <li class="leading-none">
                       <a
-                        class="p-3 lg:p-0 block !text-2xl lg:!text-sm lg:!leading-4 small-text link"
+                        class="p-3 lg:p-0 block !text-2xl lg:!text-sm lg:!leading-4 small-text link text-left lg:text-center"
                         href={item.link}
                       >
                         {item.title}

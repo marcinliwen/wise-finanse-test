@@ -570,7 +570,7 @@
     right: 0px;
     width: 100%;
     background: #750843;
-    padding: 16px;
+    padding: 0px;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -593,6 +593,9 @@
   .main-menu.id-open nav {
     opacity: 1;
     left: 0;
+    width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
   }
   ol {
     padding-left: 0px;
@@ -925,4 +928,23 @@ select.native-select:focus {
     border-bottom: 1px solid #000;
     padding-bottom: 24px;
   }
+}
+
+@media(max-width: 1024px){
+  .sub-nav {
+    display: flex;
+    height: 100%!important;
+    left: -100%;
+    position: fixed;
+    top: 0;
+    transition: transform .4s ease;
+    z-index: 99999;
+    background: #f1e6ec;
+    align-items: center;
+    text-align: left;
+    width: 100%;
+}
+ .sub-nav.active{
+  transform: translateX(100%);
+}
 }

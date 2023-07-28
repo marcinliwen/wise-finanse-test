@@ -21,6 +21,32 @@ window.onload = () => {
   }
  
   /**
+   * mobile sub-nav
+   */
+
+  const allSubnav = document.querySelectorAll('.has-sub-nav');
+  if(allSubnav){
+    allSubnav.forEach(el=>{
+      el.querySelector('label').addEventListener('click', (e)=>{
+        e.preventDefault;
+        el.querySelector('.sub-nav').classList.add('active');
+      })
+      
+    })
+   allSubnav.forEach(el=>{
+      el.querySelector('.sub-nav-back').addEventListener('click',(e)=>{
+        e.preventDefault;
+        console.log('back')
+        if( el.querySelector('.sub-nav').classList.contains('active')){
+          el.querySelector('.sub-nav').classList.remove('active')
+        }
+        
+              })
+   
+    })
+
+  }
+  /**
    * check media query
    */
   let isMobile = window.matchMedia("(max-width: 1024px)");
