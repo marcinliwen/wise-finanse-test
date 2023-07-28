@@ -1,0 +1,35 @@
+.hover-reveal {
+    position: absolute;
+    z-index: -1;
+    width: 288px;
+    height: 188px;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    opacity: 0;
+    will-change: transform, filter;
+    
+
+}
+.reveal-container{
+    display: inline;
+    z-index: 1;
+    position: relative;
+}
+.reveal-container:hover{
+    mix-blend-mode: color;
+}
+.reveal-container img{
+    position: absolute;
+    width: 288px;
+    height: 188px;
+    border-radius: 8px;
+    object-fit: cover;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    left: 50%;
+    z-index: -10;
+    opacity: 0;
+    visibily: hidden;
+    pointer-events: none;
+}
