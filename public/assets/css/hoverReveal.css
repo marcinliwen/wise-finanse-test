@@ -32,4 +32,5 @@
     opacity: 0;
     visibily: hidden;
     pointer-events: none;
+    filter:opacity(0.6)
 }
