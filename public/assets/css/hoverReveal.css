@@ -17,20 +17,31 @@
     position: relative;
 }
 .reveal-container:hover{
-    mix-blend-mode: color;
+    color: #fff;
+}
+.reveal-container:hover span{
+   color: #fff;
+   z-index: 10;
+   position: relative;
 }
 .reveal-container img{
     position: absolute;
+    min-width: 288px;
     width: 288px;
     height: 188px;
     border-radius: 8px;
     object-fit: cover;
-    transform: translateX(-50%) translateY(-50%);
+    transform: translateY(-50%);
     top: 50%;
     left: 50%;
-    z-index: -10;
+    z-index: 0;
     opacity: 0;
-    visibily: hidden;
     pointer-events: none;
-    filter:opacity(0.6)
+    transform-origin: 0% 50%;
+    transition-property: opacity;
+    transition-duration: 400ms;
+    transition-timing-function: ease-in-out;
+}
+.reveal-container:hover img{
+    opacity: 1;
 }

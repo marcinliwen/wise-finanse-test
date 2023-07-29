@@ -5,17 +5,13 @@ window.onload = () => {
   if(items){
     items.forEach((el) => {
       const image = el.querySelector('img')
-      
-      el.addEventListener('mouseenter', (e) => {
-        gsap.to(image, { autoAlpha: 1 })
-      })
-      
-       el.addEventListener('mouseleave', (e) => {
-        gsap.to(image, { autoAlpha: 0 })
-      })
-      
+      const leftPosition = el.offsetLeft;
+      const topPosition = el.offsetTop;
+      const imageWidth = image.offsetWidth/2;
+      const imageHeight = image.offsetHeight/2
       el.addEventListener('mousemove', (e) => {
-        gsap.set(image, { x: e.offsetX - 200 })
+          image.style.left = e.offsetX - leftPosition - imageWidth  + 'px';
+          image.style.top =  e.offsetY - topPosition    + 'px'
       })
     })
   }
@@ -36,7 +32,6 @@ window.onload = () => {
    allSubnav.forEach(el=>{
       el.querySelector('.sub-nav-back').addEventListener('click',(e)=>{
         e.preventDefault;
-        console.log('back')
         if( el.querySelector('.sub-nav').classList.contains('active')){
           el.querySelector('.sub-nav').classList.remove('active')
         }
@@ -389,8 +384,6 @@ window.onload = () => {
       on: {
         init: function (swiper) {
           addcounter(swiper);
-          console.log("swiper", swiper);
-          console.log("swiper.height", swiper.height);
           if (!isMobile) {
             let imgHeight = document.querySelector(
               ".home-swiper .swiper-slide img"
