@@ -201,20 +201,21 @@ window.onload = () => {
       },
       on: {
         init: function (swiper) {
-          addcounter(swiper);
+          //addcounter(swiper);
         },
-        slideChange: function (swiper) {
+       /*  slideChange: function (swiper) {
+          console.log('swiper', swiper.params.slidesPerView)
           const counter = swiper.pagination.el.querySelector(".counter");
           counter.innerHTML = `${swiper.activeIndex + 1}/${
             swiper.slides.length
           }`;
-        },
+        }, */
       },
       breakpoints: {
         760: {
           slidesPerView: 2,
         },
-        1024: { slidesPerView: 3 },
+        1024: { slidesPerView: 3, slidesPerGroup: 3 },
       },
     });
 
