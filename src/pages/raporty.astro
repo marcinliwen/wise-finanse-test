@@ -46,9 +46,9 @@ const tableData = [
     <section class="py-20 bg-grey-500">
       <div class="container wrapper">
         <div class="grid md:grid-cols-3 gap-[10px]">
-          <a class="btn primary full w-full text-center">Raporty bieżące</a>
-          <a class="btn primary full w-full text-center">Raporty okresowe</a>
-          <a class="btn primary full w-full text-center">Dobre praktyki</a>
+          <a class="btn primary outlined w-full text-center active">Raporty bieżące</a>
+          <a class="btn primary outlined w-full text-center">Raporty okresowe</a>
+          <a class="btn primary outlined w-full text-center">Dobre praktyki</a>
         </div>
       </div>
     </section>
@@ -57,28 +57,172 @@ const tableData = [
       <div class="container wrapper overflow-x-auto">
         <div class="flex flex-wrap gap-4 w-full mb-8">
           <a
-            class="btn primary outlined hover:!bg-bordo-100 hover:text-white text-bordo-100 active"
+            class="btn primary outlined hover:!bg-bordo-100 hover:text-white text-bordo-100 active tab-nav" 
             >2023</a
           >
           <a
-            class="btn primary outlined hover:!bg-bordo-100 hover:text-white text-bordo-100"
+            class="btn primary outlined hover:!bg-bordo-100 hover:text-white text-bordo-100 tab-nav"
             >2022</a
           >
           <a
-            class="btn primary outlined hover:!bg-bordo-100 hover:text-white text-bordo-100"
+            class="btn primary outlined hover:!bg-bordo-100 hover:text-white text-bordo-100 tab-nav"
             >2021</a
           >
           <a
-            class="btn primary outlined hover:!bg-bordo-100 hover:text-white text-bordo-100"
+            class="btn primary outlined hover:!bg-bordo-100 hover:text-white text-bordo-100 tab-nav"
             >2020</a
           >
           <a
-            class="btn primary outlined hover:!bg-bordo-100 hover:text-white text-bordo-100"
+            class="btn primary outlined hover:!bg-bordo-100 hover:text-white text-bordo-100 tab-nav"
             >Archiwum</a
           >
         </div>
         <table
-          class="text-bordo-300 font-['Work_Sans'] custom-table min-w-[1200px] table-fixed mb-20"
+          class="text-bordo-300 font-['Work_Sans'] custom-table min-w-[1200px] table-fixed mb-20 tab-item active"
+        >
+          <thead class="">
+            {
+              tableData.map((item, index) => {
+                if (index === 0) {
+                  return (
+                    <tr>
+                      {item.map((th) => (
+                        <th class="text-[22px] font-light text-left py-4 px-5 bg-bordo-100/20">
+                          {th}
+                        </th>
+                      ))}
+                    </tr>
+                  );
+                }
+              })
+            }
+          </thead>
+          <tbody class="text-base font-light">
+            {
+              tableData.map((item, index) => {
+                if (index > 0) {
+                  return (
+                    <tr>
+                      {item.map((td) => (
+                        <td>{td}</td>
+                      ))}
+                    </tr>
+                  );
+                }
+              })
+            }
+          </tbody>
+        </table>
+        <table
+          class="text-bordo-300 font-['Work_Sans'] custom-table min-w-[1200px] table-fixed mb-20 tab-item"
+        >
+          <thead class="">
+            {
+              tableData.map((item, index) => {
+                if (index === 0) {
+                  return (
+                    <tr>
+                      {item.map((th) => (
+                        <th class="text-[22px] font-light text-left py-4 px-5 bg-bordo-100/20">
+                          {th}
+                        </th>
+                      ))}
+                    </tr>
+                  );
+                }
+              })
+            }
+          </thead>
+          <tbody class="text-base font-light">
+            {
+              tableData.map((item, index) => {
+                if (index > 0) {
+                  return (
+                    <tr>
+                      {item.map((td) => (
+                        <td>{td}</td>
+                      ))}
+                    </tr>
+                  );
+                }
+              })
+            }
+          </tbody>
+        </table>
+        <table
+          class="text-bordo-300 font-['Work_Sans'] custom-table min-w-[1200px] table-fixed mb-20 tab-item"
+        >
+          <thead class="">
+            {
+              tableData.map((item, index) => {
+                if (index === 0) {
+                  return (
+                    <tr>
+                      {item.map((th) => (
+                        <th class="text-[22px] font-light text-left py-4 px-5 bg-bordo-100/20">
+                          {th}
+                        </th>
+                      ))}
+                    </tr>
+                  );
+                }
+              })
+            }
+          </thead>
+          <tbody class="text-base font-light">
+            {
+              tableData.map((item, index) => {
+                if (index > 0) {
+                  return (
+                    <tr>
+                      {item.map((td) => (
+                        <td>{td}</td>
+                      ))}
+                    </tr>
+                  );
+                }
+              })
+            }
+          </tbody>
+        </table>
+        <table
+          class="text-bordo-300 font-['Work_Sans'] custom-table min-w-[1200px] table-fixed mb-20 tab-item"
+        >
+          <thead class="">
+            {
+              tableData.map((item, index) => {
+                if (index === 0) {
+                  return (
+                    <tr>
+                      {item.map((th) => (
+                        <th class="text-[22px] font-light text-left py-4 px-5 bg-bordo-100/20">
+                          {th}
+                        </th>
+                      ))}
+                    </tr>
+                  );
+                }
+              })
+            }
+          </thead>
+          <tbody class="text-base font-light">
+            {
+              tableData.map((item, index) => {
+                if (index > 0) {
+                  return (
+                    <tr>
+                      {item.map((td) => (
+                        <td>{td}</td>
+                      ))}
+                    </tr>
+                  );
+                }
+              })
+            }
+          </tbody>
+        </table>
+        <table
+          class="text-bordo-300 font-['Work_Sans'] custom-table min-w-[1200px] table-fixed mb-20 tab-item"
         >
           <thead class="">
             {
