@@ -1,17 +1,17 @@
 window.onload = () => {
 
+  /**
+   * reveal on hover
+   */
   const items = document.querySelectorAll('.reveal-container')
-  //const image = document.querySelector('img')
   if(items){
     items.forEach((el) => {
       const image = el.querySelector('img')
       const leftPosition = el.offsetLeft;
       const topPosition = el.offsetTop;
-      const imageWidth = image.offsetWidth/2;
-      const imageHeight = image.offsetHeight/2
       el.addEventListener('mousemove', (e) => {
-          image.style.left = e.offsetX - leftPosition - imageWidth  + 'px';
-          image.style.top =  e.offsetY - topPosition    + 'px'
+          image.style.left = e.offsetX - leftPosition + 'px';
+          image.style.top =  e.offsetY - topPosition + 'px'
       })
     })
   }
