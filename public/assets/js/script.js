@@ -175,6 +175,16 @@ const tabNav = document.querySelectorAll(".tab-nav");
       swiper.pagination.el.prepend(counter);
     }
   };
+  const fractionCounter = (swiper) =>{
+    const counter = document.createElement("div");
+    counter.classList.add("counter");
+    counter.append(`${(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
+      swiper.slides.length/swiper.params.slidesPerGroup
+    }`);
+    if (swiper.pagination.el) {
+      swiper.pagination.el.prepend(counter);
+    }
+  }
   if (typeof Swiper !== "undefined") {
     const whyUsSwiper = new Swiper(".whyus-swiper", {
       slidesPerView: 1,
@@ -240,7 +250,8 @@ const tabNav = document.querySelectorAll(".tab-nav");
         clickable: true,
         renderBullet: function (index, className) {
           return '<span class="' + className + '"></span>';
-        },
+        }, 
+        
       },
       navigation: {
         nextEl: ".nav-next",
@@ -248,15 +259,15 @@ const tabNav = document.querySelectorAll(".tab-nav");
       },
       on: {
         init: function (swiper) {
-          //addcounter(swiper);
+          fractionCounter(swiper);
         },
-       /*  slideChange: function (swiper) {
-          console.log('swiper', swiper.params.slidesPerView)
+        slideChange: function (swiper) {
+          console.log('swiper', swiper.activeIndex)
           const counter = swiper.pagination.el.querySelector(".counter");
-          counter.innerHTML = `${swiper.activeIndex + 1}/${
-            swiper.slides.length
+          counter.innerHTML = `${(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
+            swiper.slides.length/swiper.params.slidesPerGroup
           }`;
-        }, */
+        },
       },
       breakpoints: {
         760: {
@@ -376,18 +387,19 @@ const tabNav = document.querySelectorAll(".tab-nav");
       },
       on: {
         init: function (swiper) {
-          addcounter(swiper);
+          fractionCounter(swiper);
         },
         slideChange: function (swiper) {
+          console.log('swiper', swiper.activeIndex)
           const counter = swiper.pagination.el.querySelector(".counter");
-          counter.innerHTML = `${swiper.activeIndex + 1}/${
-            swiper.slides.length
+          counter.innerHTML = `${(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
+            swiper.slides.length/swiper.params.slidesPerGroup
           }`;
         },
       },
       breakpoints: {
         760: {
-          slidesPerView: 2,
+          slidesPerView: 2, slidesPerGroup: 2
         },
       },
     });
