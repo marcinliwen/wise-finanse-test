@@ -23,9 +23,42 @@ const tabNav = document.querySelectorAll(".tab-nav");
       const image = el.querySelector('img')
       const leftPosition = el.offsetLeft;
       const topPosition = el.offsetTop;
+      const imageWidth = image.offsetWidth/2
       el.addEventListener('mousemove', (e) => {
-          image.style.left = e.offsetX - leftPosition + 'px';
-          image.style.top =  e.offsetY - topPosition + 'px'
+        if(e.movementX > 0){
+          console.log('right')
+        }else if(e.movementX < 0){
+          console.log('left')
+        }
+        console.log()
+          gsap.to(image, {
+            x:(e.offsetX - leftPosition - imageWidth + 60), 
+            y:e.offsetY - topPosition,
+            duration: 1,
+            onStart: function(){
+              gsap.to(this.targets()[0], {
+                filter: `brightness(1.15)`,
+                duration: 0.5,
+                rotation: function(){
+                  if(e.movementX > 0){
+                   return  -1
+                  }else if(e.movementX < 0){
+                    return 1
+                  }
+                },
+              })
+              console.log(this.targets()[0])
+            },
+            onComplete: function(){
+              gsap.to(this.targets()[0], {
+                filter: `brightness(1)`,
+                duration: 0.5,
+                rotation: 0,
+              })
+            }
+          })
+         /*  image.style.left = e.offsetX - leftPosition + 'px';
+          image.style.top =  e.offsetY - topPosition + 'px' */
       })
     })
   }
