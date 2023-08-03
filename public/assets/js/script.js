@@ -20,17 +20,10 @@ const tabNav = document.querySelectorAll(".tab-nav");
   if(items){
     items.forEach((el) => {
       const image = el.querySelector('img')
-      const leftPosition = el.offsetLeft;
-      
-      const topPosition = el.offsetTop;
-      
       const imageWidth = image.offsetWidth/2;
       el.addEventListener('mousemove', (e) => {
-        console.log('getBoundingClientRect().left', el.getBoundingClientRect().left)
-        console.log('getBoundingClientRect().top', el.offsetTop)
-        console.log('mouse Y', e.pageY)
           gsap.to(image, {
-            x:(e.pageX - el.getBoundingClientRect().left - imageWidth + 60), 
+            x:(e.pageX - el.getBoundingClientRect().left - imageWidth + 60),
             y:e.pageY - (window.scrollY + el.getBoundingClientRect().top + 13),
             duration: 1,
             onStart: function(){
@@ -54,8 +47,6 @@ const tabNav = document.querySelectorAll(".tab-nav");
               })
             }
           })
-         /*  image.style.left = e.offsetX - leftPosition + 'px';
-          image.style.top =  e.offsetY - topPosition + 'px' */
       })
     })
   }
