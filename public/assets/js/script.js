@@ -166,8 +166,8 @@ const tabNav = document.querySelectorAll(".tab-nav");
   const fractionCounter = (swiper) =>{
     const counter = document.createElement("div");
     counter.classList.add("counter");
-    counter.append(`${(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
-      swiper.slides.length/swiper.params.slidesPerGroup
+    counter.append(`${Math.ceil(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
+      Math.ceil(swiper.slides.length/swiper.params.slidesPerGroup)
     }`);
     if (swiper.pagination.el) {
       swiper.pagination.el.prepend(counter);
@@ -191,12 +191,12 @@ const tabNav = document.querySelectorAll(".tab-nav");
       },
       on: {
         init: function (swiper) {
-          addcounter(swiper);
+          fractionCounter(swiper);
         },
         slideChange: function (swiper) {
           const counter = swiper.pagination.el.querySelector(".counter");
-          counter.innerHTML = `${swiper.activeIndex + 1}/${
-            swiper.slides.length
+          counter.innerHTML = `${Math.ceil(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
+            Math.ceil(swiper.slides.length/swiper.params.slidesPerGroup)
           }`;
         },
         breakpoint: (swiper, params) => {
@@ -219,9 +219,9 @@ const tabNav = document.querySelectorAll(".tab-nav");
       },
       breakpoints: {
         760: {
-          slidesPerView: 2,
+          slidesPerView: 2, slidesPerGroup: 2
         },
-        1024: { slidesPerView: 3 },
+        1024: { slidesPerView: 3, slidesPerGroup: 3 },
       },
     });
 
@@ -251,14 +251,14 @@ const tabNav = document.querySelectorAll(".tab-nav");
         },
         slideChange: function (swiper) {
           const counter = swiper.pagination.el.querySelector(".counter");
-          counter.innerHTML = `${(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
-            swiper.slides.length/swiper.params.slidesPerGroup
+          counter.innerHTML = `${Math.ceil(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
+            Math.ceil(swiper.slides.length/swiper.params.slidesPerGroup)
           }`;
         },
       },
       breakpoints: {
         760: {
-          slidesPerView: 2,
+          slidesPerView: 2,slidesPerGroup: 2
         },
         1024: { slidesPerView: 3, slidesPerGroup: 3 },
       },
@@ -281,20 +281,20 @@ const tabNav = document.querySelectorAll(".tab-nav");
       },
       on: {
         init: function (swiper) {
-          addcounter(swiper);
+          fractionCounter(swiper);
         },
         slideChange: function (swiper) {
           const counter = swiper.pagination.el.querySelector(".counter");
-          counter.innerHTML = `${swiper.activeIndex + 1}/${
-            swiper.slides.length
+          counter.innerHTML = `${Math.ceil(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
+            Math.ceil(swiper.slides.length/swiper.params.slidesPerGroup)
           }`;
         },
       },
       breakpoints: {
         760: {
-          slidesPerView: 2,
+          slidesPerView: 2, slidesPerGroup: 2
         },
-        1024: { slidesPerView: 3 },
+        1024: { slidesPerView: 3, slidesPerGroup: 3 },
       },
     });
     const videoSwiper = new Swiper(".video-swiper", {
@@ -341,20 +341,20 @@ const tabNav = document.querySelectorAll(".tab-nav");
       },
       on: {
         init: function (swiper) {
-          addcounter(swiper);
+          fractionCounter(swiper);
         },
         slideChange: function (swiper) {
           const counter = swiper.pagination.el.querySelector(".counter");
-          counter.innerHTML = `${swiper.activeIndex + 1}/${
-            swiper.slides.length
+          counter.innerHTML = `${Math.ceil(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
+            Math.ceil(swiper.slides.length/swiper.params.slidesPerGroup)
           }`;
         },
       },
       breakpoints: {
         760: {
-          slidesPerView: 2,
+          slidesPerView: 2, slidesPerGroup: 2
         },
-        1024: { slidesPerView: 3 },
+        1024: { slidesPerView: 3, slidesPerGroup: 3 },
       },
     });
     const referencesSwiper = new Swiper(".references-swiper", {
@@ -476,25 +476,25 @@ const tabNav = document.querySelectorAll(".tab-nav");
       },
       on: {
         init: function (swiper) {
-          addcounter(swiper);
+          fractionCounter(swiper);
         },
         slideChange: function (swiper) {
           const counter = swiper.pagination.el.querySelector(".counter");
-          counter.innerHTML = `${swiper.activeIndex + 1}/${
-            swiper.slides.length
+          counter.innerHTML = `${Math.ceil(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
+            Math.ceil(swiper.slides.length/swiper.params.slidesPerGroup)
           }`;
         },
       },
       breakpoints: {
         760: {
-          slidesPerView: 2,
+          slidesPerView: 2, slidesPerGroup: 4,
           grid: {
             rows: 2,
             fill: "row",
           },
         },
         1024: {
-          slidesPerView: 3,
+          slidesPerView: 3, slidesPerGroup: 9,
           grid: {
             rows: 3,
             fill: "row",
