@@ -4,7 +4,6 @@ window.onload = () => {
  */
 const tabNav = document.querySelectorAll(".tab-nav");
   const tabItems = document.querySelectorAll(".tab-item");
-  console.log(tabNav);
   tabNav &&
     tabNav.forEach((el, index) => {
       el.addEventListener("click", function (event) {
@@ -22,18 +21,17 @@ const tabNav = document.querySelectorAll(".tab-nav");
     items.forEach((el) => {
       const image = el.querySelector('img')
       const leftPosition = el.offsetLeft;
+      
       const topPosition = el.offsetTop;
-      const imageWidth = image.offsetWidth/2
+      
+      const imageWidth = image.offsetWidth/2;
       el.addEventListener('mousemove', (e) => {
-        if(e.movementX > 0){
-          console.log('right')
-        }else if(e.movementX < 0){
-          console.log('left')
-        }
-        console.log()
+        console.log('getBoundingClientRect().left', el.getBoundingClientRect().left)
+        console.log('getBoundingClientRect().top', el.offsetTop)
+        console.log('mouse Y', e.pageY)
           gsap.to(image, {
-            x:(e.offsetX - leftPosition - imageWidth + 60), 
-            y:e.offsetY - topPosition,
+            x:(e.pageX - el.getBoundingClientRect().left - imageWidth + 60), 
+            y:e.pageY - (window.scrollY + el.getBoundingClientRect().top + 13),
             duration: 1,
             onStart: function(){
               gsap.to(this.targets()[0], {
@@ -47,7 +45,6 @@ const tabNav = document.querySelectorAll(".tab-nav");
                   }
                 },
               })
-              console.log(this.targets()[0])
             },
             onComplete: function(){
               gsap.to(this.targets()[0], {
@@ -262,7 +259,6 @@ const tabNav = document.querySelectorAll(".tab-nav");
           fractionCounter(swiper);
         },
         slideChange: function (swiper) {
-          console.log('swiper', swiper.activeIndex)
           const counter = swiper.pagination.el.querySelector(".counter");
           counter.innerHTML = `${(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
             swiper.slides.length/swiper.params.slidesPerGroup
@@ -390,7 +386,6 @@ const tabNav = document.querySelectorAll(".tab-nav");
           fractionCounter(swiper);
         },
         slideChange: function (swiper) {
-          console.log('swiper', swiper.activeIndex)
           const counter = swiper.pagination.el.querySelector(".counter");
           counter.innerHTML = `${(swiper.activeIndex/swiper.params.slidesPerGroup) + 1}/${
             swiper.slides.length/swiper.params.slidesPerGroup
